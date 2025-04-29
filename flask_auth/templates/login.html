@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- Add Google Font link if needed, e.g., Montserrat -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="top-bar"></div> <!-- Empty top bar -->
+
+<div class="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Logo path updated to static/logo.png -->
+<img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo" class="logo">
+
+<div class="login-container">
+
+    <h1>Login</h1>
+    <p class="subtitle">Please enter your credentials.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class=flash-messages>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="post" class="login-form">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.username.label }}<br>
+            {{ form.username(size=30) }}
+        </div>
+        <div class="form-group">
+            {{ form.password.label }}<br>
+            {{ form.password(size=30) }}
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+</div>
+{% endblock %}

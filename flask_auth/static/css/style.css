@@ -1,0 +1,153 @@
+/* Static CSS for Login Page */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* Using Montserrat as assumed from style */
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff;
+    /* Add grid background pattern if possible/desired */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Adjust grid size */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.top-bar {
+    background-color: #00d1ff; /* Cyan color from image */
+    height: 40px; /* Adjust height as needed */
+    width: 100%;
+    position: fixed; /* Or absolute, depending on desired scroll behavior */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Ensure it's above other content */
+}
+
+.menu-icon {
+    position: absolute;
+    top: 10px; /* Adjust vertical position */
+    right: 20px; /* Adjust horizontal position */
+    width: 30px;
+    height: 22px; /* Height based on lines + spacing */
+    cursor: pointer;
+    z-index: 11; /* Above top-bar */
+}
+
+.menu-icon span {
+    display: block;
+    position: absolute;
+    height: 4px; /* Thickness of the lines */
+    width: 100%;
+    background: #ffffff; /* White lines */
+    border-radius: 2px;
+    left: 0;
+    opacity: 1;
+    transition: .25s ease-in-out;
+}
+
+/* Position the lines */
+.menu-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.menu-icon span:nth-child(2) {
+    top: 9px; /* Spacing */
+}
+
+.menu-icon span:nth-child(3) {
+    top: 18px; /* Spacing */
+}
+
+.logo {
+    position: absolute;
+    top: 60px; /* Adjusted position to be below new top bar */
+    left: 40px;
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    z-index: 5; /* Below top bar/menu */
+}
+
+.login-container {
+    max-width: 500px;
+    margin: 15% auto 50px; /* Adjust top margin for vertical centering */
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.login-container h1 {
+    font-size: 3.5em; /* Large headline */
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #a0a0a0; /* Lighter grey for subtitle */
+    margin-bottom: 30px;
+}
+
+.login-form {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #c0c0c0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 1em;
+}
+
+.login-button {
+    background-color: #00d1ff; /* Cyan button */
+    color: #ffffff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 50px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.login-button:hover {
+    background-color: #00b8e6; /* Darker cyan on hover */
+}
+
+.flash-messages {
+    list-style: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ffdddd;
+    text-align: left;
+}
+
+.flash-messages li {
+    margin: 5px 0;
+}
+
+/* Optional: Add network graphic effect if desired */
+/* This would typically involve ::before/::after pseudo-elements or additional divs with complex CSS or JS/Canvas */

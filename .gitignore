@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.venv/
+ENV/
+env/
+ENV/
+
+# Environment variables
+.env
+
+# Wheels directory (generated during build)
+wheels/
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db 
+
+# Customizations (Not committed)
+flask_auth/static/logo.png 
